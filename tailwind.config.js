@@ -13,6 +13,9 @@ export default {
         secondary: "#FFFFFF",
         neutral: "#D0D6F9",
       },
+      transitionProperty: {
+        "fade-in": "visibility, transform",
+      },
     },
   },
   plugins: [],
