@@ -16,3 +16,20 @@
   font-family: "bellefair";
   src: url("/fonts/Bellefair-Regular.ttf");
 }
+
+.bg-home {
+  --bg: url("/images/background-home-mobile.jpg");
+  background-image: var(--bg);
+}
+
+@media (min-width: 768px) {
+  .bg-home {
+    --bg: url("/images/background-home-tablet.jpg");
+  }
+}
+
+@media (min-width: 1024px) {
+  .bg-home {
+    --bg: url("/images/background-home-desktop.jpg");
+  }
+}

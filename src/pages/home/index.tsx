@@ -3,12 +3,7 @@ import Header from "../../components/layout/header";
 
 export default function HomePage() {
   return (
-    <div
-      style={{
-        backgroundImage: 'url("/background-home-mobile.jpg")',
-      }}
-      className='min-h-screen bg-no-repeat bg-cover'
-    >
+    <div className='min-h-screen bg-no-repeat bg-cover bg-home'>
       <Header />
       {/* <BodyText>
         00 Home 01 Destination 02 Crew 03 Technology So, you want to travel to

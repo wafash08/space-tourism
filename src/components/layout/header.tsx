@@ -18,18 +18,18 @@ export default function Header() {
     }
   }
 
-  console.log("isExpanded >> ", isExpanded);
   return (
     <header
       onKeyUp={handleKeyUp}
-      className='pt-6 pb-6 pl-6 pr-6 flex items-center justify-between bg-transparent'
+      className='py-6 md:py-0 pl-6 pr-6 md:pr-0 flex items-center justify-between bg-transparent'
     >
       <div>
         <Link to={"/"}>
           <Logo />
         </Link>
       </div>
-      <div className='lg:hidden'>
+
+      <div className='md:hidden'>
         <HamburgerButton
           handleClick={handleClick}
           id={NAVIGATION_ID}
@@ -40,7 +40,7 @@ export default function Header() {
       <nav
         id={NAVIGATION_ID}
         className={clsx(
-          "h-screen fixed top-0 right-0 w-2/3 backdrop-filter backdrop-blur-xl bg-secondary/10 transition-fade-in duration-300 ease-in-out",
+          "md:hidden h-screen fixed top-0 right-0 w-2/3 backdrop-filter backdrop-blur-xl bg-secondary/10 transition-fade-in duration-300 ease-in-out",
           isExpanded ? "visible translate-x-0" : "invisible translate-x-full"
         )}
       >
@@ -67,7 +67,44 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
+      <div className='hidden md:block relative'>
+        <div className='hidden lg:block w-[450px] h-[1px] bg-secondary absolute top-1/2 -translate-y-1/2 z-20 -left-2/4' />
+        <NavbarDesktop />
+      </div>
     </header>
+  );
+}
+
+function NavbarDesktop() {
+  return (
+    <nav className='h-24 lg:w-[830px] md:w-[450px] backdrop-filter backdrop-blur-xl bg-secondary/10'>
+      <ul className='flex items-center justify-evenly h-full'>
+        <li className='flex h-full items-center border-b-4 border-b-transparent hover:border-b-secondary'>
+          <NavText to='/' classNames='flex h-full items-center gap-3'>
+            <span className='font-bold'>00</span>Home
+          </NavText>
+        </li>
+        <li className='flex h-full items-center border-b-4 border-b-transparent hover:border-b-secondary'>
+          <NavText
+            to='/destination'
+            classNames='flex h-full items-center gap-3'
+          >
+            <span className='font-bold'>01</span>Destination
+          </NavText>
+        </li>
+        <li className='flex h-full items-center border-b-4 border-b-transparent hover:border-b-secondary'>
+          <NavText to='/crew' classNames='flex h-full items-center gap-3'>
+            <span className='font-bold'>02</span>Crew
+          </NavText>
+        </li>
+        <li className='flex h-full items-center border-b-4 border-b-transparent hover:border-b-secondary'>
+          <NavText to='/technology' classNames='flex h-full items-center gap-3'>
+            <span className='font-bold'>03</span>Technology
+          </NavText>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
