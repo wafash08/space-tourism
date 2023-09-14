@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Link } from "react-router-dom";
+import { NavLink, NavLinkProps } from "react-router-dom";
 
 type Sizes = "base" | "sm";
 
@@ -8,7 +8,7 @@ type NavTextProps = {
   children: React.ReactNode;
   classNames?: string;
   size?: Sizes;
-};
+} & NavLinkProps;
 
 function getSizeVariant(size: Sizes) {
   if (size === "sm") {
@@ -23,18 +23,20 @@ export default function NavText({
   to,
   classNames,
   size = "base",
+  ...props
 }: NavTextProps) {
   const sizeVariant = getSizeVariant(size);
   return (
-    <Link
+    <NavLink
       to={to}
       className={clsx(
         "font-barlow-condensed text-secondary uppercase",
         sizeVariant,
         classNames
       )}
+      {...props}
     >
       {children}
-    </Link>
+    </NavLink>
   );
 }

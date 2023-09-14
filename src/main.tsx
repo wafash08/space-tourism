@@ -7,28 +7,31 @@ import ErrorPage from "./pages/error-page.tsx";
 import CrewPage from "./pages/crew/index.tsx";
 import DestinationPage from "./pages/destination/index.tsx";
 import TechnologyPage from "./pages/technology/index.tsx";
+import Layout from "./components/layout/index.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/crew",
-    element: <CrewPage />,
-  },
-  {
-    path: "/destination",
-    element: <DestinationPage />,
-  },
-  {
-    path: "/technology",
-    element: <TechnologyPage />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "crew",
+        element: <CrewPage />,
+      },
+      {
+        path: "destination",
+        element: <DestinationPage />,
+      },
+      {
+        path: "technology",
+        element: <TechnologyPage />,
+      },
+    ],
   },
 ]);
 

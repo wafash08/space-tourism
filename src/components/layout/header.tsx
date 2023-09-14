@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header
       onKeyUp={handleKeyUp}
-      className='py-6 md:py-0 pl-6 pr-6 md:pr-0 flex items-center justify-between bg-transparent'
+      className='py-6 md:py-0 pl-6 pr-6 md:pr-0 flex items-center justify-between bg-transparent absolute top-0 left-0 w-full'
     >
       <div>
         <Link to={"/"}>
@@ -82,7 +82,7 @@ function NavbarDesktop() {
       <ul className='flex items-center justify-evenly h-full'>
         <li className='flex h-full items-center border-b-4 border-b-transparent hover:border-b-secondary'>
           <NavText to='/' classNames='flex h-full items-center gap-3'>
-            <span className='font-bold'>00</span>Home
+            <span className='font-bold hidden lg:inline'>00</span>Home
           </NavText>
         </li>
         <li className='flex h-full items-center border-b-4 border-b-transparent hover:border-b-secondary'>
@@ -90,17 +90,17 @@ function NavbarDesktop() {
             to='/destination'
             classNames='flex h-full items-center gap-3'
           >
-            <span className='font-bold'>01</span>Destination
+            <span className='font-bold hidden lg:inline'>01</span>Destination
           </NavText>
         </li>
         <li className='flex h-full items-center border-b-4 border-b-transparent hover:border-b-secondary'>
           <NavText to='/crew' classNames='flex h-full items-center gap-3'>
-            <span className='font-bold'>02</span>Crew
+            <span className='font-bold hidden lg:inline'>02</span>Crew
           </NavText>
         </li>
         <li className='flex h-full items-center border-b-4 border-b-transparent hover:border-b-secondary'>
           <NavText to='/technology' classNames='flex h-full items-center gap-3'>
-            <span className='font-bold'>03</span>Technology
+            <span className='font-bold hidden lg:inline'>03</span>Technology
           </NavText>
         </li>
       </ul>
