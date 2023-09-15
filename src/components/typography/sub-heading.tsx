@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import clsx from "clsx";
 
 type Variants = "base" | "small";
 
 type SubHeadingProps = {
-  children: ReactNode;
+  children: React.ReactNode;
   variant?: Variants;
 };
 
@@ -21,5 +21,5 @@ export default function SubHeading({
 }: SubHeadingProps) {
   const variantClass = getVariant(variant);
 
-  return <p className={variantClass}>{children}</p>;
+  return <p className={clsx("uppercase", variantClass)}>{children}</p>;
 }

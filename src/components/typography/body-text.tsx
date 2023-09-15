@@ -15,8 +15,8 @@ export default function BodyText({
     <p
       className={clsx(
         "font-barlow text-[15px] md:text-base lg:text-lg leading-normal",
-        color === "white" ? "text-secondary" : undefined,
-        color === "gray" ? "text-[#D0D6F9]" : undefined,
+        color === "white" && "text-secondary",
+        color === "gray" && "text-[#D0D6F9]",
         classNames
       )}
     >

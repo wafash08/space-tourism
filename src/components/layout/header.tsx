@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header
       onKeyUp={handleKeyUp}
-      className='py-6 md:py-0 pl-6 pr-6 md:pr-0 flex items-center justify-between bg-transparent absolute top-0 left-0 w-full'
+      className='py-6 md:py-0 pl-6 md:pl-10 pr-6 md:pr-0 flex items-center justify-between bg-transparent absolute top-0 left-0 w-full'
     >
       <div>
         <Link to={"/"}>

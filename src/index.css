@@ -18,18 +18,29 @@
 }
 
 .bg-home {
-  --bg: url("/images/background-home-mobile.jpg");
-  background-image: var(--bg);
+  --bg-home: url("/images/background-home-mobile.jpg");
+  background-image: var(--bg-home);
+}
+
+.bg-destination {
+  --bg-destination: url("/images/background-destination-mobile.jpg");
+  background-image: var(--bg-destination);
 }
 
 @media (min-width: 768px) {
   .bg-home {
-    --bg: url("/images/background-home-tablet.jpg");
+    --bg-home: url("/images/background-home-tablet.jpg");
+  }
+  .bg-destination {
+    --bg-destination: url("/images/background-destination-tablet.jpg");
   }
 }
 
 @media (min-width: 1024px) {
   .bg-home {
-    --bg: url("/images/background-home-desktop.jpg");
+    --bg-home: url("/images/background-home-desktop.jpg");
+  }
+  .bg-destination {
+    --bg-destination: url("/images/background-destination-desktop.jpg");
   }
 }

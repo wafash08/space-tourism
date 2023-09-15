@@ -7,7 +7,7 @@ function getSize(size: Sizes) {
       return "font-bellefair text-[100px] md:text-[150px]";
     }
     case "l": {
-      return "font-bellefair text-[100px]";
+      return "font-bellefair text-[56px] md:text-[80px] lg:text-[100px]";
     }
     case "m": {
       return "font-bellefair text-[56px]";
@@ -16,7 +16,7 @@ function getSize(size: Sizes) {
       return "font-bellefair text-[32px]";
     }
     case "xs": {
-      return "font-barlow-condensed text-base md:text-[20px] lg:text-[28px] tracking-[2.7px] lg:tracking-[4.75px]";
+      return "font-barlow-condensed text-base md:text-xl lg:text-[28px] tracking-[2.7px] lg:tracking-[4.75px]";
     }
   }
 }
@@ -41,8 +41,8 @@ export default function Heading<
     <Component
       className={clsx(
         "uppercase",
-        color === "white" ? "text-secondary" : undefined,
-        color === "gray" ? "text-[#D0D6F9]" : undefined,
+        color === "white" && "text-secondary",
+        color === "gray" && "text-[#D0D6F9]",
         classses
       )}
       {...props}
